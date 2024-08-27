@@ -1,0 +1,45 @@
+
+body{
+    background-image: url("bg.jpg");
+}
+h1{
+    text-align: center;
+}
+
+table,th, td{
+    border: 1px  solid skyblue;
+    
+    text-align: center;
+}
+
+h3,h4{
+    text-align: center;
+}
+
+.day{
+    color: black;
+    background-color: tomato;
+}
+.day:hover{
+    background-color: yellow;
+    border-radius: 60px;
+  
+}
+
+h3{
+    color:red ;
+}
+
+@media screen and (max-width:600px) {
+    * {
+        font-size: 0.97em;
+        transition: 0.1s;
+    }
+}
+
+@media screen and (min-width:600px) and (max-width:800px) {
+    * {
+        font-size: 0.9999em;
+        transition: 0.1s;
+    }
+}
