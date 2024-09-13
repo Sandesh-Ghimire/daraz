@@ -17,13 +17,13 @@ import EditjobPage from './pages/EditjobPage';
 
 const App = () => {
 //add new job  
-const addjob = async(newjob)=> {
+const addjob = async(newJob)=> {
 const res= await  fetch('/api/jobs',{
 method: 'POST',
 headers:{
-  'Content-Type':application/json
+  'Content-Type':'application/json'
 },
-body: JSON.stringify(newjob),
+body: JSON.stringify(newJob),
     }
   );
   return;
@@ -40,11 +40,11 @@ const deletejob= async (id)=>
 
 const updateJob= async(job)=>
 {
-  const res= await  fetch(`/api/jobs/${id}`,{
+  const res= await  fetch(`/api/jobs/${job.id}`,{
     method: 'PUT',
   
   headers:{
-    'Content-Type':application/json
+    'Content-Type':'application/json'
   },
   body: JSON.stringify(job),
       }
@@ -58,9 +58,8 @@ const router = createBrowserRouter(
   <Route index element={<HomePage/>}/>
   <Route path='/jobs' element={<JobsPage/>}/>
   <Route path='*' element={<NotFoundPage/>}/>
-  <Route path='/jobs/:id' element={<JobPage deletejob={
-    deletejob}/>} loader={jobLoader}/>
-     <Route path='/edit-job/:id' element={<EditjobPage updateJobSumbit={updateJob}/>} loader={jobLoader}/>
+  <Route path='/jobs/:id' element={<JobPage deletejob={ deletejob}/>}  loader={jobLoader}/>
+     <Route path='/edit-job/:id' element={<EditjobPage updateJobSubmit={updateJob}/>} loader={jobLoader}/>
   <Route path='/add-job' element={<Addjob addJobSumbit={addjob}/>}/>
 
 </Route>

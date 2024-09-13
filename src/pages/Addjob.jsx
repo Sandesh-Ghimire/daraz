@@ -33,7 +33,7 @@ const Addjob = ({addJobSumbit}) => {
                 contactPhone,
             },
         };
-
+console.log(newJob);
         addJobSumbit(newJob);
         toast.success('job added sucessfully.');
         return navigate('/jobs');
