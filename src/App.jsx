@@ -53,17 +53,24 @@ const updateJob= async(job)=>
 }
 
 const router = createBrowserRouter(
-  createRoutesFromElements(
-  <Route path='/' element={<MainLayout/>}>
-  <Route index element={<HomePage/>}/>
-  <Route path='/jobs' element={<JobsPage/>}/>
-  <Route path='*' element={<NotFoundPage/>}/>
-  <Route path='/jobs/:id' element={<JobPage deletejob={ deletejob}/>}  loader={jobLoader}/>
-     <Route path='/edit-job/:id' element={<EditjobPage updateJobSubmit={updateJob}/>} loader={jobLoader}/>
-  <Route path='/add-job' element={<Addjob addJobSumbit={addjob}/>}/>
-
-</Route>
-)
+	createRoutesFromElements(
+		<Route path="/" element={<MainLayout />}>
+			<Route index element={<HomePage />} />
+			<Route path="/jobs" element={<JobsPage />} />
+			<Route path="*" element={<NotFoundPage />} />
+			<Route
+				path="/jobs/:id"
+				element={<JobPage deletejob={deletejob} />}
+				loader={jobLoader}
+			/>
+			<Route
+				path="/edit-job/:id"
+				element={<EditjobPage updateJobSubmit={updateJob} />}
+				loader={jobLoader}
+			/>
+			<Route path="/add-job" element={<Addjob addJobSumbit={addjob} />} />
+		</Route>
+	)
 );
 
   return (
